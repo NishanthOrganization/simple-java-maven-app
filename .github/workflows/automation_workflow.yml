@@ -22,8 +22,19 @@ jobs:
 
   Build:
     runs-on: [ self-hosted ]
+    needs: Clone
     steps:
+      - name: Run tests
+        run: echo "Running tests..."
+
+      - name: Manual Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          approvers: "Nish-1992,username2"
+          message: "Approve to build?"
+      
       - name: build
+        if: ${{ steps.manual_approval.outputs.approved == 'true' }}
         run: |
             echo ${{ github.workspace }}
             cd simple-java-maven-app
