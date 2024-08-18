@@ -31,7 +31,6 @@ jobs:
         uses: trstringer/manual-approval@v1
         with:
           approvers: "Nish-1992,username2"
-          message: "Approve to build?"
       
       - name: build
         if: ${{ steps.manual_approval.outputs.approved == 'true' }}
