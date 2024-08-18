@@ -1,0 +1,21 @@
+name: MAVEN
+on:
+  workflow_dispatch:
+
+   
+jobs:
+
+  Clone:
+    runs-on: [ self-hosted ]
+    steps:
+    
+      - name: Print the workspace
+        run: echo ${{ github.workspace }}
+        
+      - name: Clear workspace
+        run: rm -rf ${{ github.workspace }}/*
+      
+      - name: Checkout code
+        run: |
+            GIT_SSH_COMMAND=git clone https://github.com/NishanthOrganization/simple-java-maven-app.git
+            pwd
