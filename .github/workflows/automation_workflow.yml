@@ -19,3 +19,12 @@ jobs:
         run: |
             git clone https://github.com/NishanthOrganization/simple-java-maven-app.git
             pwd
+
+  Build:
+    runs-on: [ self-hosted ]
+    steps:
+      - name: build
+        run: |
+            echo ${{ github.workspace }}
+            cd simple-java-maven-app
+            mvn clean install
