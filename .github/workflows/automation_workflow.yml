@@ -30,6 +30,7 @@ jobs:
       - name: Manual Approval
         uses: trstringer/manual-approval@v1
         with:
+          secret: ${{ secrets.GH_TOKEN }}
           approvers: "Nish-1992,username2"
       
       - name: build
