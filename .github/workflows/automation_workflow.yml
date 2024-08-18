@@ -31,7 +31,7 @@ jobs:
         uses: trstringer/manual-approval@v1
         with:
           secret: ${{ secrets.GH_TOKEN }}
-          approvers: "Nish-1992,username2"
+          approvers: "Nish-1992"
       
       - name: build
         if: ${{ steps.manual_approval.outputs.approved == 'true' }}
