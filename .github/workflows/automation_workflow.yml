@@ -17,5 +17,5 @@ jobs:
       
       - name: Checkout code
         run: |
-            GIT_SSH_COMMAND=git clone https://github.com/NishanthOrganization/simple-java-maven-app.git
+            git clone https://github.com/NishanthOrganization/simple-java-maven-app.git
             pwd
